@@ -23,7 +23,7 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
-@app.route('/pred', methods=['POST'])
+@app.route('/pred', methods=['GET','POST'])
 def predict():
     url = request.form['url']
     pred = classify_url(url)
