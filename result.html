@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Phishing Detection Result</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #030B3C;
+            padding: 20px;
+            background-image: url("../static/images/phish.jpg");
+            background-size: 100% 100%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            height: 95vh;
+            width: 95vw;
+
+        }
+      
+        h1 {
+            color: #a3f805;
+        }
+
+        p {
+            color: #d200dd;
+            font-size: medium;
+        }
+
+        .result-safe {
+            color: green;
+            font-weight: bold;
+            font-size: medium;            
+        }
+
+        .result-malicious {
+            color: red;
+            font-weight: bold;
+            font-size: medium;
+        }
+    </style>
+</head>
+<body>
+    <h1>Phishing Detection Result</h1>
+    <p>URL: {{ url }}</p>
+    <p class="{% if result == 'Safe' %}result-safe{% else %}result-malicious{% endif %}" >Result: {{ result }}</p>
+</body>
+</html>
